@@ -1,0 +1,50 @@
+
+#cd ./Setup
+#conda env create --file medical_cv_env.yaml
+
+#pip install --no-deps PytorchWildlife   (in shell after running this, just to get the PW modules)
+#pip install --no-deps ultralytics-yolov5   # this takes care of the missing yolov5 module, but seems to be missing 'scale_coords'
+
+name: medical_cv
+channels:
+  - conda-forge
+  - pytorch
+  - nvidia
+  
+dependencies:
+  - python=3.10
+  - pytorch-cuda=12.1
+  - pytorch=2.01
+  - numpy
+  - pytorch-lightning
+  - torchvision
+  - timm
+  - pandas
+  - tqdm
+  - ipython
+  - jupyter
+  - matplotlib
+  - plotly
+  - plotly_express
+  - scipy
+  - scikit-learn
+  - scikit-image
+  - seaborn
+  - albumentations
+  - opencv
+  - python-kaleido
+  - fastparquet
+  - pyarrow
+  - piexif
+  - pyyaml
+
+  #medical imaging
+  - monai
+  - zarr
+  - ultralytics
+
+  # Packages that are only on PyPi
+  - pip
+  - pip:
+      #pip install copick
+
